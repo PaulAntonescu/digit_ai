@@ -1,0 +1,25 @@
+.grid {
+    border-collapse: collapse;
+    td {
+        width: 20px;
+        height: 20px;
+        border: 1px solid black;
+        padding: 0; 
+        margin: 0;
+    }
+}
+
+.selected {
+    background-color: black;
+}
+
+.result_table {
+    text-align: center;
+    border-collapse: collapse;
+    td {
+        width: 20px;
+        height: 20px;
+        border: 1px solid black;
+        padding: 5px;
+    }
+}

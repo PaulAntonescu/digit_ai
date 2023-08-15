@@ -1,0 +1,27 @@
+<table>
+  <td>
+    <table class="grid">
+      <tr *ngFor="let row of grid; let i=index;">
+        <td 
+          *ngFor="let pix of row; let j=index;" 
+          (mousemove)="($event.ctrlKey == true) ? boop(i,j):''"
+          (mousemove)="($event.shiftKey == true) ? clearBoops():''"
+
+          [ngStyle]="{'background-color': grid[i][j]>0 ?'black':'', 'opacity': ((grid[i][j]/255)*100)+'%' }">
+        </td>
+      </tr>
+    </table>
+    <button (click)="clearBoops()">Clear the boops</button>
+  </td>
+  <td>
+    <br>
+    <table class="result_table">
+      <tr [ngStyle]="{'background': digitStyle(y, i==winner)}" *ngFor="let y of numbi;let i=index">
+        <td>{{i}}</td>
+        <td style="width: 200px">{{y | number:"1.2-2"}}</td>
+      </tr>
+    </table>
+    <p>{{error}}</p>
+    <p *ngIf="loading">Loading...</p>
+  </td>
+</table>
